@@ -11,6 +11,7 @@ router.register(r'todolist', ToDoListViewSet)
 urlpatterns = [
     path("", views.home, name="home"),
     path("<int:id>", views.database_list, name="index"),
+    path("create/", views.create, name="create"),
     path("contact/", views.contact, name="contact"),
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
