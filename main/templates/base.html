@@ -1,12 +1,49 @@
 <!doctype html>
 <html>
+
 <head>
     <title>{% block title %} First Piter's django {% endblock %}</title>
-</head>
-<body>
-    <h1> Welcome to the First Piter's django website</h1>
 
-    <div id="content", name=content">
+    <style type="text/css">
+        .sidenav {
+            height: 100%;
+            width: 120px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: :hidden;
+            padding-top: 20px;
+        }
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+        }
+        .sidenav a:hover{
+            color: #f1f1f1;
+        }
+        .main{
+            margin-left: 130px;
+            padding: 0px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <a href="/"> Home </a>
+        <a href="/create"> Create </a>
+        <a href="/1"> List 1 </a>
+        <a href="/contact"> Contact </a>
+    </div>
+
+    <div id="content" name=content" class="main">
+        <h1> Welcome to the first Piter's django website</h1>
         {% block content %}
 
         replace me
