@@ -7,11 +7,17 @@
 {% block content %}
     <p> you have selected this item from the database list: </p>
     <h1> {{ls.name}} </h1>
-    <ul>
-        {% for item in ls.item_set.all %}
-            {% if item.complete == False %}
-                <li> {{item.text}} - complete </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+    <form method="post" action="#">
+        {% csrf_token %}
+        <ul>
+            {% for item in ls.item_set.all %}
+                {% if item.complete == False %}
+                    <li><input type="checkbox" value="clicked" name="c{{item.id}}" checked> {{item.text}} </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <button type="submit" name="save" value="save"> Save </button>
+        <input type="text" name="new">
+        <button type="submit" name="newItem" value="newItem"> Add Item </button>
+    </form>
 {% endblock %}
