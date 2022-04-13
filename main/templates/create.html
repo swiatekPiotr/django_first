@@ -3,7 +3,7 @@
 {% block title %} Create New List {% endblock %}
 
 {% block content %}
-    <p> you can add item to database here </p>
+    <p> you can add new list to database here </p>
     <form method="post" action="/create/">
         {% csrf_token %}
         {{form.as_p}}

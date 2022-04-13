@@ -10,6 +10,7 @@ router.register(r'todolist', ToDoListViewSet)
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("home/", views.home, name="home"),
     path("<int:id>", views.database_list, name="index"),
     path("create/", views.create, name="create"),
     path("view/", views.view, name="view"),
